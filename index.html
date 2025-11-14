@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Re:frame</title>
+
+<link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+<div class="container">
+
+  <!-- LEFT: Step 1 / Step 2 입력 -->
+  <aside class="input-panel glass-card">
+    <h1>Re:frame</h1>
+    <p>Your AI companion for exploring meaning in visual storytelling.</p>
+
+    <!-- STEP 1: 작품 정보 -->
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title" placeholder="e.g., Inception, Spirited Away, Parasite" />
+    </div>
+
+    <div class="form-group">
+      <label for="metadata">Optional Metadata</label>
+      <input id="metadata" placeholder="Year, director, studio, cast…" />
+    </div>
+
+    <button id="searchBtn" class="btn" style="width:100%;margin-bottom:.5rem;">Search for Work</button>
+
+    <!-- STEP 2: 장면 입력 (처음엔 숨김) -->
+    <div id="sceneSection" class="fade-section hidden" style="margin-top:1.5rem;">
+
+      <!-- 🔹 여기: 두 개였던 텍스트박스를 하나로 통합 -->
+      <div class="form-group">
+        <label for="sceneInput">Scene & your thoughts / question</label>
+        <textarea
+          id="sceneInput"
+          placeholder="Describe the scene, what stood out to you, and what you’d like to understand or discuss about it…"
+        ></textarea>
+      </div>
+
+      <!-- AI 단일 분석 모드 설명 -->
+      <div id="analysisOptions" class="glass-card" style="margin-top:.5rem;">
+        <h3 style="margin-top:0;">How I’ll frame the answer</h3>
+        <p style="color:var(--secondary-text);margin-top:.25rem;">
+          I’ll generate one unified AI interpretation of your scene, based on its visuals, mood, and themes.
+        </p>
+      </div>
+
+      <!-- 언어 설정 -->
+      <div class="form-group" style="margin-top:1rem;">
+        <label for="answerLanguage">Answer language</label>
+        <select id="answerLanguage">
+          <option value="auto">Auto (match your question)</option>
+        </select>
+      </div>
+
+      <button id="analyzeBtn" class="btn" style="width:100%;" disabled>Analyze Scene</button>
+    </div>
+
+  </aside>
+
+  <!-- RIGHT: 결과 영역 -->
+  <main id="resultsPanel" class="results-panel">
+    <div id="introCard" class="glass-card info-card">
+      <h2>What would you like to explore today?</h2>
+      <p style="color:var(--secondary-text);margin:.5rem 0 0;">
+        Start with a film, anime, or drama you’re curious about.<br />
+        Add anything you remember (year, director, studio, cast) and I’ll find likely matches.
+      </p>
+    </div>
+  </main>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
