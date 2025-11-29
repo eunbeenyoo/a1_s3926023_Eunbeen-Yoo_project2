@@ -1,5 +1,5 @@
 /* ------------ CONFIG ------------ */
-const GEMINI_API_KEY = "AIzaSyAWNO9wExNWVlWB9s1ti03mLz-IZkZwIa0"; // 테스트용으로만 직접 넣기
+const GEMINI_API_KEY = "AIzaSyAwdegO0HWdsy1B4SUxtkrk2YJr8zyVtBk"; // 테스트용으로만 직접 넣기
 const GEMINI_API_URL =
   `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
 
